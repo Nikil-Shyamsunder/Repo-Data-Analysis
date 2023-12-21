@@ -3,6 +3,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import altair as alt
 import seaborn as sns
+import requests
+
+# I uploaded the dataset to my personal website to download from because it is too large to fit on Github
+url = "https://www.nikilshyamsunder.com/_files/ugd/3c41f5_75a24860301147a080fbf1dffa8503e7.csv?dn=repository_data.csv"
 
 # Set Streamlit page configuration
 st.set_page_config(
@@ -14,7 +18,8 @@ st.set_page_config(
 st.title('Beacon Dashboard: Github Repository Dataset')
 
 # Load the dataset
-df = pd.read_csv('data/repository_data.csv')
+#df = pd.read_csv('data/repository_data.csv')
+df = pd.read_csv(url)
 
 # Display 3 Important Metrics
 num_rows = df.shape[0]
